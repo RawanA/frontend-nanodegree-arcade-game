@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="container-fluid">
+  <div class="row centered">
+    <span class="text-middle text-size text-color-white"> Your Life : </span>
+    <div>
+        <span class="heart"></span><span class="heart"></span><span class="heart"></span>
+    </div>
+    <hr>
+      <p id="won-lose-mssg" class="text-middle text-size text-color-white"></p>
+  </div>
+  <div class="row">
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
+  </div>
+
 </body>
 </html>
