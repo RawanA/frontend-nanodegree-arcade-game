@@ -1,6 +1,14 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+This is the third project of Udacity course of Front-End Developer
+## Description
+a 2D games with one played and multiple bus with random movements, the played must reach the river to win without colliding with a bug.
+## Diffculties
+The player has 3 hearts maximum, if all hearts ended the played loses the games, and so the game will be restarted after 3 seconds from the losing massege appears.
+The played will cintune plaung the game until he/she loses.
+## Games Instructions
+The player can press the arrwos puttuns to move the character to all four dimentions, plus the the 'shift' button to continue plaing after reaching the river (winning).
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+### Changes
+I added some changes to the style stylesheetand some new elemnts to the index file for the hearts.
