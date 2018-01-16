@@ -1,3 +1,25 @@
 body {
     text-align: center;
+    background-color: rgb(4, 49, 54);
+}
+
+img {
+  width: 60px;
+  height: auto;
+}
+
+.centered { 
+    margin: auto; max-width: 300px;
+}
+
+.text-middle {
+  padding-top: 40px;
+}
+
+.text-size {
+  font-size: 25px;
+}
+
+.text-color-white{
+  color: white;
 }
