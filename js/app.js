@@ -35,6 +35,11 @@ Enemy.prototype.update = function(dt) {
       this.x = -200;
     }
 
+    this.checkCollisions();
+
+};
+
+Enemy.prototype.checkCollisions = function(){
   // when the player and the bugs collied
   // one heart will be removed from the array
   // and the player's position will be reseted
@@ -77,7 +82,7 @@ Player.prototype.update = function(){
     else{
       allHearts[j].style.display = 'inline';
     }
-  }
+  };
 
   // check if the user has reached the river safley and so won the games
   // the player can continue playing by entering 'Shift'
