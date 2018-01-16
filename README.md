@@ -11,7 +11,7 @@ The played will cintune plaung the game until he/she loses.
 The player can press the arrwos puttuns to move the character to all four dimentions, plus the the 'shift' button to continue plaing after reaching the river (winning).
 
 ### Changes
-I added some changes to the style stylesheetand some new elemnts to the index file for the hearts.
+I added some changes to the style stylesheetand some new elemnts to the canvas for the hearts.
 
 ### How to Play
 you can play the game now on
