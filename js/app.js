@@ -82,7 +82,7 @@ Player.prototype.update = function(){
     else{
       allHearts[j].style.display = 'inline';
     }
-  };
+  }
 
   // check if the user has reached the river safley and so won the games
   // the player can continue playing by entering 'Shift'
