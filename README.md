@@ -12,3 +12,7 @@ The player can press the arrwos puttuns to move the character to all four diment
 
 ### Changes
 I added some changes to the style stylesheetand some new elemnts to the index file for the hearts.
+
+### How to Play
+you can play the game now on
+https://rawana.github.io/frontend-nanodegree-arcade-game/
