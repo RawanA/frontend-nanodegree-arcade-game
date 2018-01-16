@@ -1,4 +1,3 @@
-
 //array of heart images and a varaiable of className "heart" array
 //to fill the spans in index file
 //and delete a heart each time a player lose
@@ -18,7 +17,7 @@ var Enemy = function(x, y) {
 
     // random number between 50 and 300
     this.speed = Math.floor((Math.random() * 300) + 50);
-    
+
     this.x = x;
     this.y = y;
 };
@@ -83,7 +82,7 @@ Player.prototype.update = function(){
   // check if the user has reached the river safley and so won the games
   // the player can continue playing by entering 'Shift'
   // Until he/she loses the game
-  if (player.y < 20 & valid) {
+  if (this.y < 20 & valid) {
     document.getElementById('won-lose-mssg').innerHTML += "Congradulation :), Press 'Shift' to continue";
     valid = false;
   }
