@@ -1,12 +1,30 @@
-//array of heart images and a varaiable of className "heart" array
-//to fill the spans in index file
-//and delete a heart each time a player lose
-var lifeHearts = ["<img src='"+'images/Heart.png'+"' alt='heart'>","<img src='"+'images/Heart.png'+"' alt='heart'>","<img src='"+'images/Heart.png'+"' alt='heart'>"];
-var allHearts = document.getElementsByClassName("heart");
-
 // a varaible helps in the conditions of win and lose
 var valid = true;
 
+var Heart = function (x, y){
+  this.sprite = 'images/Heart.png';
+  this.x = x;
+  this.y = y;
+};
+
+// Draw the heart on the screen, required method for game
+Heart.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+// when a player lose the all hearts (game) the hearts will be refilled by this function.
+Heart.prototype.reset = function(){
+
+  //if the life is empty the hearts will be refilled again for another game.
+  if(allHearts.length === 0){
+    heart1 = new Heart(100, 570);
+    heart2 = new Heart(200, 570);
+    heart3 = new Heart(300, 570);
+
+    allHearts = [heart1, heart2, heart3];
+  }
+
+};
 // Enemies our player must avoid
 var Enemy = function(x, y) {
     // Variables applied to each of our instances go here,
@@ -44,8 +62,8 @@ Enemy.prototype.checkCollisions = function(){
   // one heart will be removed from the array
   // and the player's position will be reseted
   if(this.x < player.x + 30 && this.x + 60 > player.x && this.y < player.y + 60 && this.y + 40 > player.y) {
-    // console.log("you lose");
-    lifeHearts.pop();
+
+    allHearts.pop();
     player.reset();
   }
 };
@@ -69,20 +87,6 @@ var Player = function(x, y){
 };
 
 Player.prototype.update = function(){
-  // For loop ti fill the HTML elemnts of class heart with images of hearts
-  // pop() function returns undefined
-  // then the HTMLelemnt with undefined word will NOT be diplayed
-  for (j =0 ; j < allHearts.length; j++){
-    allHearts[j].innerHTML = lifeHearts[j];
-
-    if(allHearts[j].innerHTML == 'undefined'){
-
-      allHearts[j].style.display = 'none';
-    }
-    else{
-      allHearts[j].style.display = 'inline';
-    }
-  }
 
   // check if the user has reached the river safley and so won the games
   // the player can continue playing by entering 'Shift'
@@ -96,19 +100,16 @@ Player.prototype.update = function(){
   // a losing maeesage appears
   // and after 3 seconds the hearts will be refilled again
   // and the games is restarted
-  if(lifeHearts.length == 0 & valid){
+  if(allHearts.length == 0 & valid){
 
-  document.getElementById('won-lose-mssg').innerHTML += "Game Over";
+  document.getElementById('won-lose-mssg').innerHTML += "Game Over :(";
   valid = false;
 
   setTimeout(function() {
     document.getElementById('won-lose-mssg').innerHTML = "";
 
-    lifeHearts = ["<img src='"+'images/Heart.png'+"' alt='heart'>","<img src='"+'images/Heart.png'+"' alt='heart'>","<img src='"+'images/Heart.png'+"' alt='heart'>"];
+    heart1.reset();
 
-    for (j =0 ; j < allHearts.length; j++){
-      allHearts[j].innerHTML = lifeHearts[j];
-    }
       valid = true;
   }, 3000);
 
@@ -147,8 +148,15 @@ Player.prototype.handleInput = function(move){
   }
 };
 // Now instantiate your objects.
+// Place all three Hearts Objects in an array call allHearts
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+var heart1 = new Heart(100, 570);
+var heart2 = new Heart(200, 570);
+var heart3 = new Heart(300, 570);
+
+var allHearts = [heart1, heart2, heart3];
+
 var enemy1 = new Enemy(-100, 60);
 var enemy2 = new Enemy(-200, 140);
 var enemy3 = new Enemy(-300, 230);
