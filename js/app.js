@@ -98,7 +98,7 @@ Player.prototype.update = function(){
   // and the games is restarted
   if(lifeHearts.length == 0 & valid){
 
-  document.getElementById('won-lose-mssg').innerHTML += "Opps you Died :(";
+  document.getElementById('won-lose-mssg').innerHTML += "Game Over";
   valid = false;
 
   setTimeout(function() {
